@@ -19,4 +19,12 @@ body {
 .img-medium {
     height: 200px;
 }
-
+.bodhi{
+    max-width: 800px;
+    margin: 0 auto;
+    color: #1200ff;
+    font-family: cursive;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

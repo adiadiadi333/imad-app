@@ -10,8 +10,8 @@ var articleone = {
     heading:"ARTICLE ONE!!!"
 };
 var createtemplate=function(data){
-    var title = date.title;
-    var heading = date.heading;
+    var title = data.title;
+    var heading = data.heading;
     var htmltemplate =  `
     <!doctype html>
     <html>

@@ -5,6 +5,60 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleone = {
+    title:"Article 1 | Aditya's Website",
+    heading:"ARTICLE ONE!!!"
+};
+var createtemplate=function(data){
+    var title = date.title;
+    var heading = date.heading;
+    var htmltemplate =  `
+    <!doctype html>
+    <html>
+        <head>
+            <title>
+                ${title}
+            </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="/ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="bodhi">
+                <div>
+                    <a href="/">BACK TO HOME PAGE</a>
+                </div>
+                <hr/>
+                <h3>
+                    ${heading}
+                </h3>
+                <div>
+                    insert date here
+                </div>
+                <div>
+                    <p>
+                        Here is the great article you have been searching for. Get all the knowledge you need in this world.
+                        Thats all Im bored to write further. So this should suffice ----------------------------------------
+                        ----------------------------------------------------------------------------------------------------
+                        ----------------------------------------------------------------------------------------------------
+                    </p>
+                    <p>
+                        The second para already? Continue reading. ---------------------------------------------------------
+                        ----------------------------------------------------------------------------------------------------
+                        ----------------------------------------------------------------------------------------------------
+                        ----------------------------------------------------------------------------------------------------
+                    </p>
+                    <p>
+                        Last one no more reading. Thats it------------------------------------------------------------------
+                        ----------------------------------------------------------------------------------------------------
+                        ----------------------------------------------------------------------------------------------------
+                    </p>
+                </div>
+            </div>
+        </body>
+    </html>`
+    ;
+    return htmltemplate;
+};
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -14,7 +68,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 app.get('/article1', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article1.html'));
+  res.send(createtemplate(articleone));
 });
 
 app.get('/article2', function (req, res) {

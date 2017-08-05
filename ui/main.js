@@ -4,5 +4,10 @@ console.log('Loaded!');
 var img = document.getElementById('madi');
 // if i click do
 img.onclick = function(){
-    img.style.marginLeft = '100px'; 
+    var interval = setInterval(moveRight,100);
+};
+marginleft = 0;
+moveRight = function(){
+    marginleft+=10;
+    img.style.marginleft = marginleft + 'px';  
 };
